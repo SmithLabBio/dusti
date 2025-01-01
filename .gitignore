@@ -1,0 +1,10 @@
+
+/dusti.egg-info
+/dusti/__pycache__
+/example_results
+manual/main.aux
+manual/main.fdb_latexmk
+manual/main.fls
+manual/main.log
+manual/main.synctex.gz
+manual/main.toc

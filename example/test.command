@@ -1,0 +1,1 @@
+/Users/megansmith/Documents/Programs/SimPhy-flexiblesim-nov2023/SimPhy-flexiblesim/bin/simphy -RL f:5 -S ((((A:250000,B:250000):250000,C:500000):250000,(D:400000,E:400000):350000):250000,F:1000000); -LB f:5e-7 -LD f:0 -SU f:1e-7 -SP f:10000 -O test 

@@ -1,0 +1,85 @@
+%% Overleaf			
+%% Software Manual and Technical Document Template	
+%% 									
+%% This provides an example of a software manual created in Overleaf.
+
+\documentclass{scrartcl}
+
+\title{Software Manual: dusti}
+\subtitle{Version: 0.0.1}
+\author{Megan L. Smith}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Installation}
+
+Install the package with:
+
+\texttt{pip install git+https://github.com/SmithLabBio/dusti.git}
+
+\section{Input files}
+
+\subsection{Alignments}
+
+The primary input is the path to a folder with a set of alignments from gene families. These can be either in fasta or phylip format. Fasta files should be named with the suffix '.fa' or '.fasta', while phylip files should be named with the suffic '.phy'.
+
+\subsection{Mapping File}
+
+A file mapping gene names to species is also required. This file should be a text file and delimited either by tabs or spaces. 
+The first column contains the species name, and the second column contains information regarding gene names.
+
+There are three options for providing mapping information:
+
+\begin{itemize}
+
+    \item \textbf{Exact mapping:} For each gene name in the input gene trees, include the full gene name and the corresponding species name.
+
+    Example: A    A\_0\_0
+
+    Result: Maps A\_0\_0 to species A.
+
+    \item \textbf{Prefix mapping:} Map gene names to species names based on a prefix. The first understore in the gene names will be used to distinguish the prefix from the remainder of the name.
+    
+    Example: A    A*
+
+    Result: Maps A\_* to species A, where * can be any set of characters.
+
+    \item \textbf{Suffix mapping:} Map gene names to species names based on a prefix. The final underscore in the gene names will be used to distinguish the suffix from the remainder of the name.
+    
+    Example: A    *A
+
+    Result: Maps *\_A to species A, where * can be any set of characters.
+
+\end{itemize}
+
+An example mapping file is available in ./example/s\_map.txt
+
+\section{Running dusti}
+
+The user must supply several commands to run dusti:
+
+\begin{itemize}
+    \item -i (--input): a path to a directory of alignments
+    \item -a (--map): a path to the mapping file
+    \item -o (--output\_directory): a path to an output directory
+    \item --qfm: a path to wQFM program
+    \item -q (--max\_quartets): an integer specifying the maximum number of quartets to use (default: all)
+    \item -s (--seed): an integer specifying a random number seed to use when sampling quartets (default: None)
+    \item --force: used to overwrite an existing output directory (default: False)
+    \item --svd: perform inference based on SVD (default: False)
+    \item --parsimony: perform inference based on parsimony (default: False)
+\end{itemize}
+
+To run dusti on the example files:
+
+
+\texttt{dusti --input example/alignments --map example/s\_map.txt -o example\_results/ --qfm ~/Documents/programs/wQFM-2020/wQFM-v1.4.jar --force}
+
+
+\end{document}
