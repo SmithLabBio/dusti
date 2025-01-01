@@ -82,4 +82,20 @@ To run dusti on the example files:
 \texttt{dusti --input example/alignments --map example/s\_map.txt -o example\_results/ --qfm ~/Documents/programs/wQFM-2020/wQFM-v1.4.jar --force}
 
 
+\section{Output}
+
+Dusti will output two files per analysis:
+
+\begin{itemize}
+    \item SVD analysis: 
+    \begin{itemize}
+        \item svdquartets.trees: quartets inferred using the SVD method
+        \item svd.tre: species tree inferred using SVD method and quartet puzzling
+    \end{itemize}
+    \item Parsimony analysis:
+    \begin{itemize}
+        \item parsimonyquartets.trees: quartets inferred using the parsimony method
+        \item parsimony.tre: species tree inferred using parsimony method and quartet puzzling
+    \end{itemize}\end{itemize}
+
 \end{document}
