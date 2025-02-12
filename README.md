@@ -10,6 +10,8 @@ Install the package with:
 pip install git+https://github.com/SmithLabBio/dusti.git
 ```
 
+Get the wQFM program from: https://github.com/Mahim1997/wQFM-2020
+
 ## Running
 
 For a simple test run:
